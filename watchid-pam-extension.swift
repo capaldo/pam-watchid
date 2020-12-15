@@ -18,7 +18,6 @@ public func pam_sm_authenticate(pamh: pam_handler_t, flags: Int, argc: Int, argv
     if sudoArguments.contains("-A") || sudoArguments.contains("--askpass") {
         return PAM_IGNORE
     }
-
     if sudoArguments.contains("-S") || sudoArguments.contains("--stdin") {
         return PAM_IGNORE
     }
