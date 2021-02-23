@@ -19,9 +19,6 @@ public func pam_sm_authenticate(pamh: pam_handle_t, flags: CInt, argc: CInt, arg
     if sudoArguments.contains("-A") || sudoArguments.contains("--askpass") {
         return PAM_IGNORE
     }
-    if sudoArguments.contains("-S") || sudoArguments.contains("--stdin") {
-        return PAM_IGNORE
-    }
 
     let arguments = parseArguments(argc: Int(argc), argv: argv)
     var reason = arguments["reason"] ?? DEFAULT_REASON
